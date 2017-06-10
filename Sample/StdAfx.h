@@ -4,13 +4,9 @@
 
 #define _CRT_SECURE_NO_DEPRECATE
 
-#include "UIlib\\UIlib.h"
+#include <windows.h>
+#include <objbase.h>
 
-#include <olectl.h>
-
-#define lengthof(x) (sizeof(x)/sizeof(*x))
-#define MAX max
-#define MIN min
-#define CLAMP(x,a,b) (MIN(b,MAX(a,x)))
+#include <UIlib\UIlib.h>
 
 #endif
