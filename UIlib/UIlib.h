@@ -1,8 +1,15 @@
+#ifndef _UILIB_H_
+#define _UILIB_H_
+#pragma once
 
-#ifdef UILIB_EXPORTS
-#define UILIB_API __declspec(dllexport)
+#ifdef UILIB_STATIC
+#	define UILIB_API 
 #else
-#define UILIB_API __declspec(dllimport)
+#	if defined(UILIB_EXPORTS)
+#		define UILIB_API __declspec(dllexport)
+#	else
+#		define UILIB_API __declspec(dllimport)
+#	endif
 #endif
 
 #include <windows.h>
@@ -32,3 +39,9 @@
 #include "UIMarkup.h"
 #include "UIDlgBuilder.h"
 
+#include "Internal.h"
+
+#pragma comment( lib, "winmm.lib" )
+#pragma comment( lib, "comctl32.lib" )
+
+#endif

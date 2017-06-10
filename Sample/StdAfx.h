@@ -4,7 +4,7 @@
 
 #define _CRT_SECURE_NO_DEPRECATE
 
-#include "UIlib.h"
+#include "UIlib\\UIlib.h"
 
 #include <olectl.h>
 
@@ -12,7 +12,5 @@
 #define MAX max
 #define MIN min
 #define CLAMP(x,a,b) (MIN(b,MAX(a,x)))
-
-#include "Internal.h"
 
 #endif

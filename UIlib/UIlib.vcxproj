@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9DFEF00B-6B5D-42FD-88B5-BDDA824D2734}</ProjectGuid>
+    <RootNamespace>UIlib</RootNamespace>
+    <ProjectName>UIlib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</UseDebugLibraries>
+    <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)Bin\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)Bin\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)Lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)Lib\</OutDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;UILIB_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;UILIB_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Internal.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="UIActiveX.h" />
+    <ClInclude Include="UIAnim.h" />
+    <ClInclude Include="UIBase.h" />
+    <ClInclude Include="UIBlue.h" />
+    <ClInclude Include="UIButton.h" />
+    <ClInclude Include="UICombo.h" />
+    <ClInclude Include="UIContainer.h" />
+    <ClInclude Include="UIDecoration.h" />
+    <ClInclude Include="UIDlgBuilder.h" />
+    <ClInclude Include="UIEdit.h" />
+    <ClInclude Include="UILabel.h" />
+    <ClInclude Include="UIlib.h" />
+    <ClInclude Include="UIList.h" />
+    <ClInclude Include="UIManager.h" />
+    <ClInclude Include="UIMarkup.h" />
+    <ClInclude Include="UIPanel.h" />
+    <ClInclude Include="UITab.h" />
+    <ClInclude Include="UITool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="UIActiveX.cpp" />
+    <ClCompile Include="UIAnim.cpp" />
+    <ClCompile Include="UIBase.cpp" />
+    <ClCompile Include="UIBlue.cpp" />
+    <ClCompile Include="UIButton.cpp" />
+    <ClCompile Include="UICombo.cpp" />
+    <ClCompile Include="UIContainer.cpp" />
+    <ClCompile Include="UIDecoration.cpp" />
+    <ClCompile Include="UIDlgBuilder.cpp" />
+    <ClCompile Include="UIEdit.cpp" />
+    <ClCompile Include="UILabel.cpp" />
+    <ClCompile Include="UIlib.cpp" />
+    <ClCompile Include="UIList.cpp" />
+    <ClCompile Include="UIManager.cpp" />
+    <ClCompile Include="UIMarkup.cpp" />
+    <ClCompile Include="UIPanel.cpp" />
+    <ClCompile Include="UITab.cpp" />
+    <ClCompile Include="UITool.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
