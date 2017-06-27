@@ -79,4 +79,3 @@ void CGreyTextHeaderUI::DoPaint(HDC hDC, const RECT& /*rcPaint*/)
    CBlueRenderEngineUI::DoFillRect(hDC, m_pManager, rcLine, UICOLOR_DIALOG_TEXT_DARK);
    CBlueRenderEngineUI::DoPaintQuickText(hDC, m_pManager, m_rcItem, m_sText, UICOLOR_DIALOG_TEXT_DARK, UIFONT_BOLD, DT_SINGLELINE);
 }
-
