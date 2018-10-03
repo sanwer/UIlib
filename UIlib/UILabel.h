@@ -1,9 +1,6 @@
-#if !defined(AFX_UILABEL_H__20060218_34CC_2871_036E_0080AD509054__INCLUDED_)
-#define AFX_UILABEL_H__20060218_34CC_2871_036E_0080AD509054__INCLUDED_
-
-#if _MSC_VER > 1000
+#ifndef UILIB_UILABEL_H
+#define UILIB_UILABEL_H
 #pragma once
-#endif // _MSC_VER > 1000
 
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -12,22 +9,22 @@
 class UILIB_API CLabelPanelUI : public CControlUI
 {
 public:
-   CLabelPanelUI();
+	CLabelPanelUI();
 
-   LPCTSTR GetClass() const;
+	LPCTSTR GetClass() const;
 
-   void SetText(LPCTSTR pstrText);
+	void SetText(LPCTSTR pstrText);
 
-   void SetWidth(int cxWidth);
-   void SetTextStyle(UINT uStyle);
+	void SetWidth(int cxWidth);
+	void SetTextStyle(UINT uStyle);
 
-   SIZE EstimateSize(SIZE szAvailable);
-   void DoPaint(HDC hDC, const RECT& rcPaint);
-   void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+	SIZE EstimateSize(SIZE szAvailable);
+	void DoPaint(HDC hDC, const RECT& rcPaint);
+	void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
 
 protected:
-   int m_cxWidth;
-   UINT m_uTextStyle;
+	int m_cxWidth;
+	UINT m_uTextStyle;
 };
 
 
@@ -37,11 +34,9 @@ protected:
 class UILIB_API CGreyTextHeaderUI : public CControlUI
 {
 public:
-   LPCTSTR GetClass() const;
-   SIZE EstimateSize(SIZE szAvailable);
-   void DoPaint(HDC hDC, const RECT& rcPaint);
+	LPCTSTR GetClass() const;
+	SIZE EstimateSize(SIZE szAvailable);
+	void DoPaint(HDC hDC, const RECT& rcPaint);
 };
 
-
-#endif // !defined(AFX_UILABEL_H__20060218_34CC_2871_036E_0080AD509054__INCLUDED_)
-
+#endif

@@ -1,14 +1,6 @@
-#ifndef __UIMARKUP_H__
-#define __UIMARKUP_H__
-
+#ifndef UILIB_MARKUP_H
+#define UILIB_MARKUP_H
 #pragma once
-
-enum
-{
-	XMLFILE_ENCODING_UTF8 = 0,
-	XMLFILE_ENCODING_UNICODE = 1,
-	XMLFILE_ENCODING_ASNI = 2,
-};
 
 class CMarkup;
 class CMarkupNode;
@@ -16,14 +8,13 @@ class CMarkupNode;
 
 class UILIB_API CMarkup
 {
-	friend class CMarkupNode;
+	friend CMarkupNode;
 public:
 	CMarkup(LPCTSTR pstrXML = NULL);
 	~CMarkup();
 
 	bool Load(LPCTSTR pstrXML);
-	bool LoadFromMem(BYTE* pByte, DWORD dwSize, int encoding = XMLFILE_ENCODING_UTF8);
-	bool LoadFromFile(LPCTSTR pstrFilename, int encoding = XMLFILE_ENCODING_UTF8);
+	bool LoadFromFile(LPCTSTR pstrFilename);
 	void Release();
 	bool IsValid() const;
 
@@ -59,7 +50,7 @@ private:
 	inline void _SkipWhitespace(LPCTSTR& pstr) const;
 	inline void _SkipIdentifier(LPTSTR& pstr) const;
 	inline void _SkipIdentifier(LPCTSTR& pstr) const;
-	bool _ParseData(LPTSTR& pstrText, LPTSTR& pstrData, char cEnd);
+	bool _ParseData(LPTSTR& pstrText, LPTSTR& pstrData, TCHAR cEnd);
 	void _ParseMetaChar(LPTSTR& pstrText, LPTSTR& pstrDest);
 	bool _ParseAttributes(LPTSTR& pstrText);
 	bool _Failed(LPCTSTR pstrError, LPCTSTR pstrLocation = NULL);
@@ -68,7 +59,7 @@ private:
 
 class UILIB_API CMarkupNode
 {
-	friend class CMarkup;
+	friend CMarkup;
 private:
 	CMarkupNode();
 	CMarkupNode(CMarkup* pOwner, int iPos);
@@ -98,7 +89,7 @@ public:
 private:
 	void _MapAttributes();
 
-	enum { MAX_XML_ATTRIBUTES = 64 };
+	enum { MAX_XML_ATTRIBUTES = 20 };
 
 	typedef struct
 	{
@@ -112,4 +103,4 @@ private:
 	CMarkup* m_pOwner;
 };
 
-#endif // __UIMARKUP_H__
+#endif

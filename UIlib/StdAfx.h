@@ -1,5 +1,5 @@
-#ifndef _STDAFX_H_
-#define _STDAFX_H_
+#ifndef UILIB_STDAFX_H
+#define UILIB_STDAFX_H
 #pragma once
 
 #define _CRT_SECURE_NO_DEPRECATE
